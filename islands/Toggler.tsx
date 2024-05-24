@@ -10,7 +10,7 @@ export default function Toggler() {
     const username = form.username.value;
     const score = form.score.value;
 
-    await axios.post("http://localhost:3000/new-high-score", {
+    await axios.post("https://high-score-api.deno.dev/new-high-score", {
       username,
       score,
     });

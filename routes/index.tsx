@@ -20,7 +20,7 @@ type Scores = z.infer<typeof schema>;
 export const handler: Handlers = {
   async GET(req, ctx) {
     const result = await Try(() =>
-      axios.get<unknown>("http://localhost:3000/all-scores")
+      axios.get<unknown>("https://high-score-api.deno.dev/all-scores")
         .then(({ data }) => schema.parse(data))
     );
 
