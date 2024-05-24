@@ -34,7 +34,8 @@
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "$std/": "https://deno.land/std@0.216.0/",
     "axios": "npm:axios",
-    "zod": "npm:zod"
+    "zod": "npm:zod",
+    "fp-try": "jsr:@2or3godzillas/fp-try"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
