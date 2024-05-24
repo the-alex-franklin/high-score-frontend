@@ -1,7 +1,7 @@
 import { useSignal } from "@preact/signals";
 import axios from "axios";
 
-export default function Toggler() {
+export default function Toggler(props: { apiUrl?: string }) {
   const showForm = useSignal(false);
 
   const sendNewScore = async (e: Event) => {
@@ -10,7 +10,7 @@ export default function Toggler() {
     const username = form.username.value;
     const score = form.score.value;
 
-    await axios.post("https://high-score-api.deno.dev/new-high-score", {
+    await axios.post(`${props.apiUrl}/new-high-score`, {
       username,
       score,
     });

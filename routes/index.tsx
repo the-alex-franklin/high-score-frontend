@@ -20,7 +20,7 @@ type Scores = z.infer<typeof schema>;
 export const handler: Handlers = {
   async GET(req, ctx) {
     const result = await Try(() =>
-      axios.get<unknown>("https://high-score-api.deno.dev/all-scores")
+      axios.get<unknown>(`${Deno.env.get("API_URL")}/all-scores`)
         .then(({ data }) => schema.parse(data))
     );
 
@@ -42,7 +42,7 @@ export default function Home({ data: result }: { data: Failure | Success<Scores>
         <div className="mt-4" />
         {rest.map(({ username, score }) => <p>{username}: {score}</p>)}
       </div>
-      <Toggler />
+      <Toggler apiUrl={Deno.env.get("API_URL")} />
     </div>
   );
 }
