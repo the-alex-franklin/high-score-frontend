@@ -27,11 +27,10 @@ export const handler: Handlers = {
 };
 
 export default function Home({ data: result }: { data: Failure | Success<Scores> }) {
-  if (result.failure) return <div>{result.error.message}</div>;
-  const data = result.data;
+  if (result.failure) return <div className="h-screen bg-black text-white">{result.error.message}</div>;
 
-  const topThree = data.slice(0, 3);
-  const rest = data.slice(3);
+  const topThree = result.data.slice(0, 3);
+  const rest = result.data.slice(3);
 
   return (
     <div className="w-screen h-screen flex flex-col justify-center gap-8 items-center bg-gray-800 text-white">
