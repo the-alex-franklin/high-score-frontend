@@ -1,7 +1,7 @@
 import { Handlers } from "$fresh/server.ts";
 import axios from "axios";
 import { z } from "zod";
-import Try, { Failure, Success } from "fp-try";
+import { Failure, Success, Try } from "fp-try";
 import Toggler from "../islands/Toggler.tsx";
 
 const schema = z.object({
