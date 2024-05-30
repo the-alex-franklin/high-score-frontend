@@ -10,7 +10,6 @@ export default function Toggler(props: { apiUrl?: string }) {
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            console.log(e.currentTarget);
             const username = e.currentTarget.username.value;
             const score = e.currentTarget.score.value;
 
